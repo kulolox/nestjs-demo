@@ -17,12 +17,18 @@ dependencies:
   '@nestjs/swagger':
     specifier: ^7.1.14
     version: 7.1.14(@nestjs/common@10.2.7)(@nestjs/core@10.2.7)(reflect-metadata@0.1.13)
+  express-session:
+    specifier: ^1.18.0
+    version: 1.18.0
   reflect-metadata:
     specifier: ^0.1.13
     version: r2.cnpmjs.org/reflect-metadata@0.1.13
   rxjs:
     specifier: ^7.8.1
     version: 7.8.1
+  svg-captcha:
+    specifier: ^1.4.0
+    version: r2.cnpmjs.org/svg-captcha@1.4.0
 
 devDependencies:
   '@nestjs/cli':
@@ -37,6 +43,9 @@ devDependencies:
   '@types/express':
     specifier: ^4.17.17
     version: 4.17.20
+  '@types/express-session':
+    specifier: ^1.17.10
+    version: 1.17.10
   '@types/jest':
     specifier: ^29.5.2
     version: 29.5.6
@@ -1051,6 +1060,12 @@ packages:
       '@types/send': 0.17.3
     dev: true
 
+  /@types/express-session@1.17.10:
+    resolution: {integrity: sha512-U32bC/s0ejXijw5MAzyaV4tuZopCh/K7fPoUDyNbsRXHvPSeymygYD1RFL99YOLhF5PNOkzswvOTRaVHdL1zMw==}
+    dependencies:
+      '@types/express': 4.17.20
+    dev: true
+
   /@types/express@4.17.20:
     resolution: {integrity: sha512-rOaqlkgEvOW495xErXMsmyX3WKBInbhG5eqojXYi3cGUaLoRDlXa5d52fkfWZT963AZ3v2eZ4MbKE6WpDAGVsw==}
     dependencies:
@@ -1658,9 +1673,18 @@ packages:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
     dev: true
 
+  /cookie-signature@1.0.7:
+    resolution: {integrity: sha512-NXdYc3dLr47pBkpUCHtKSwIOQXLVn8dZEuywboCOJY/osA0wFSLlSawr3KN8qXJEyX66FcONTH8EIlVuK0yyFA==}
+    dev: false
+
   /cookie@0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
+
+  /cookie@0.6.0:
+    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
+    engines: {node: '>= 0.6'}
+    dev: false
 
   /cookiejar@2.1.4:
     resolution: {integrity: sha512-LDx6oHrK+PhzLKJU9j5S7/Y3jM/mUHvD/DeI1WQmJn652iPC5Y4TBzC9l+5OMOXlyTTA+SmVUPm0HQUwpD5Jqw==}
@@ -1918,6 +1942,22 @@ packages:
       jest-message-util: 29.7.0
       jest-util: 29.7.0
     dev: true
+
+  /express-session@1.18.0:
+    resolution: {integrity: sha512-m93QLWr0ju+rOwApSsyso838LQwgfs44QtOP/WBiwtAgPIo/SAh1a5c6nn2BR6mFNZehTpqKDESzP+fRHVbxwQ==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      cookie: 0.6.0
+      cookie-signature: 1.0.7
+      debug: r2.cnpmjs.org/debug@2.6.9
+      depd: r2.cnpmjs.org/depd@2.0.0
+      on-headers: r2.cnpmjs.org/on-headers@1.0.2
+      parseurl: r2.cnpmjs.org/parseurl@1.3.3
+      safe-buffer: r2.cnpmjs.org/safe-buffer@5.2.1
+      uid-safe: r2.cnpmjs.org/uid-safe@2.1.5
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
 
   /express@4.18.2:
     resolution: {integrity: sha512-5/PsL6iGPdfQ/lKM1UuielYgv3BUoJfz1aUwU9vHZ+J7gyvwdQXFEBIEIaxeGf0GIcreATNyBExtalisDbuMqQ==}
@@ -5176,6 +5216,13 @@ packages:
     version: 4.1.1
     engines: {node: '>=0.10.0'}
 
+  r2.cnpmjs.org/on-headers@1.0.2:
+    resolution: {integrity: sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/on-headers/-/on-headers-1.0.2.tgz}
+    name: on-headers
+    version: 1.0.2
+    engines: {node: '>= 0.8'}
+    dev: false
+
   r2.cnpmjs.org/once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/once/-/once-1.4.0.tgz}
     name: once
@@ -5201,6 +5248,15 @@ packages:
     dependencies:
       mimic-fn: r2.cnpmjs.org/mimic-fn@4.0.0
     dev: true
+
+  r2.cnpmjs.org/opentype.js@0.7.3:
+    resolution: {integrity: sha512-Veui5vl2bLonFJ/SjX/WRWJT3SncgiZNnKUyahmXCc2sa1xXW15u3R/3TN5+JFiP7RsjK5ER4HA5eWaEmV9deA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/opentype.js/-/opentype.js-0.7.3.tgz}
+    name: opentype.js
+    version: 0.7.3
+    hasBin: true
+    dependencies:
+      tiny-inflate: r2.cnpmjs.org/tiny-inflate@1.0.3
+    dev: false
 
   r2.cnpmjs.org/ora@5.4.1:
     resolution: {integrity: sha512-5b6Y85tPxZZ7QytO+BQzysW31HJku27cRIlkbAXaNx+BdcVi+LlRFmVXzeF6a7JCwJpyw5c4b+YSVImQIrBpuQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/ora/-/ora-5.4.1.tgz}
@@ -5433,6 +5489,13 @@ packages:
     name: queue-microtask
     version: 1.2.3
     dev: true
+
+  r2.cnpmjs.org/random-bytes@1.0.0:
+    resolution: {integrity: sha512-iv7LhNVO047HzYR3InF6pUcUsPQiHTM1Qal51DcGSuZFBil1aBBWG5eHPNek7bvILMaYJ/8RU1e8w1AMdHmLQQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/random-bytes/-/random-bytes-1.0.0.tgz}
+    name: random-bytes
+    version: 1.0.0
+    engines: {node: '>= 0.8'}
+    dev: false
 
   r2.cnpmjs.org/randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/randombytes/-/randombytes-2.1.0.tgz}
@@ -5772,6 +5835,15 @@ packages:
       has-flag: r2.cnpmjs.org/has-flag@4.0.0
     dev: true
 
+  r2.cnpmjs.org/svg-captcha@1.4.0:
+    resolution: {integrity: sha512-/fkkhavXPE57zRRCjNqAP3txRCSncpMx3NnNZL7iEoyAtYwUjPhJxW6FQTQPG5UPEmCrbFoXS10C3YdJlW7PDg==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/svg-captcha/-/svg-captcha-1.4.0.tgz}
+    name: svg-captcha
+    version: 1.4.0
+    engines: {node: '>=4.x'}
+    dependencies:
+      opentype.js: r2.cnpmjs.org/opentype.js@0.7.3
+    dev: false
+
   r2.cnpmjs.org/symbol-observable@4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/symbol-observable/-/symbol-observable-4.0.0.tgz}
     name: symbol-observable
@@ -5808,6 +5880,12 @@ packages:
     name: through
     version: 2.3.8
     dev: true
+
+  r2.cnpmjs.org/tiny-inflate@1.0.3:
+    resolution: {integrity: sha512-pkY1fj1cKHb2seWDy0B16HeWyczlJA9/WW3u3c4z/NiWDsO3DOU5D7nhTLE9CF0yXv/QZFY7sEJmj24dK+Rrqw==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/tiny-inflate/-/tiny-inflate-1.0.3.tgz}
+    name: tiny-inflate
+    version: 1.0.3
+    dev: false
 
   r2.cnpmjs.org/titleize@3.0.0:
     resolution: {integrity: sha512-KxVu8EYHDPBdUYdKZdKtU2aj2XfEx9AfjXxE/Aj0vT06w2icA09Vus1rh6eSu1y01akYg6BjIK/hxyLJINoMLQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/titleize/-/titleize-3.0.0.tgz}
@@ -5908,6 +5986,15 @@ packages:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/typedarray/-/typedarray-0.0.6.tgz}
     name: typedarray
     version: 0.0.6
+
+  r2.cnpmjs.org/uid-safe@2.1.5:
+    resolution: {integrity: sha512-KPHm4VL5dDXKz01UuEd88Df+KzynaohSL9fBh096KWAxSKZQDI2uBrVqtvRM4rwrIrRRKsdLNML/lnaaVSRioA==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/uid-safe/-/uid-safe-2.1.5.tgz}
+    name: uid-safe
+    version: 2.1.5
+    engines: {node: '>= 0.8'}
+    dependencies:
+      random-bytes: r2.cnpmjs.org/random-bytes@1.0.0
+    dev: false
 
   r2.cnpmjs.org/universalify@2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==, registry: https://r.cnpmjs.org/, tarball: https://r2.cnpmjs.org/universalify/-/universalify-2.0.0.tgz}
