@@ -13,7 +13,12 @@ export class UserService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} user`;
+    const userList = [
+      { id: 1, name: '许建峰' },
+      { id: 2, name: '宋宝宝' },
+      { id: 3, name: '宋宝宝1' },
+    ];
+    return userList.find((t) => t.id === id) || '查无此人';
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
