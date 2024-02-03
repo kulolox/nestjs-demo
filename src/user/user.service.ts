@@ -1,8 +1,20 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import * as svgCaptcha from 'svg-captcha';
+import { User } from './entities/user.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class UserService {
+  constructor(@InjectRepository(User) private usersRepository: Repository<User>) {}
+
+  async queryUser(data): Promise<User[]> {
+    return await this.usersRepository.query(`
+    select id, username, role, roleId, permissions from user
+    where username = '${data.username}' and password = '${data.password}'
+    `);
+  }
+
   createCode() {
     // 生成验证码
     const Captcha = svgCaptcha.create({

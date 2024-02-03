@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Param, Delete, Res, Session } from '@nestjs/common';
+import { Controller, Get, Post, Patch, Param, Delete, Res, Session, Body } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 
 import { UserService } from './user.service';
@@ -17,6 +17,30 @@ export class UserController {
     session.code = codeInfo.text;
     res.type('image/svg+xml');
     res.send(codeInfo.data);
+  }
+
+  @Post('login')
+  @ApiOperation({
+    summary: '登陆',
+  })
+  async login(@Body() params) {
+    console.log('params:', params);
+    const res = await this.userService.queryUser(params);
+    console.log('res', res);
+    if (res.length) {
+      return {
+        code: 0,
+        data: {
+          ...res[0],
+        },
+      };
+    }
+    return {
+      code: -1,
+      data: {
+        msg: '用户不存在',
+      },
+    };
   }
 
   @Post()
